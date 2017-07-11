@@ -2,8 +2,10 @@
 Minimal react boilerplate - babel/webpack2
 ## Installation
 TODO: Describe the installation process
-## Usage
-TODO: Write usage instructions
+## Usage - Development environment
+
+Execute `npm start` to run the development server on **[http://localhost:8080](http://localhost:8080)
+
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`

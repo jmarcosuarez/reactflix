@@ -1,23 +1,11 @@
-const webpack = require('webpack');
-var path = require('path');
+// const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './src/index.js'
-  ],
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        eslint: {
-          configFile: path.join(__dirname, './.eslintrc')
-        },
-        postcss: () => {
-          return [autoprefixer];
-        }
-      }
-    })
+    './src/index.js',
   ],
 
   module: {
@@ -36,43 +24,42 @@ module.exports = {
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] }
+          options: { presets: ['es2015'] },
         }],
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: true }
+            options: {
+              modules: true,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
           },
         ],
       },
-      {
-        test: /\.(sass|scss)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ]
-      },
-    
+
       // Loaders for other file types can go here
 
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: './dist',
     hot: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };

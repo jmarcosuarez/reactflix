@@ -12,7 +12,7 @@ function Stream({ tracks = [] }) {
 }
 
 Stream.propTypes = {
-  tracks: React.PropTypes.node.isRequired,
+  tracks: React.PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default Stream;
