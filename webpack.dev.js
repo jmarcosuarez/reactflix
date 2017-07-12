@@ -67,8 +67,8 @@ module.exports = {
         collapseWhitespace: true,
       },
       hash: true,
-      filename: 'index.html',
-      template: './src/index.ejs',
+      filename: 'index.html', // Name of file created
+      template: './src/index.ejs',  // Load custom template
     }),
     new ExtractTextPlugin('app.css'),
   ],
