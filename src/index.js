@@ -22,16 +22,18 @@ const store = configureStore();
 store.dispatch(actions.setTracks(tracks));
 
 const history = syncHistoryWithStore(browserHistory, store);
+const routes = (
+  <Route path="/" component={App}>
+    <IndexRoute component={Stream} />
+  </Route>
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Stream} />
-      </Route>
+      {routes}
     </Router>
   </Provider>,
   document.getElementById('app'),
 );
 
-// module.hot.accept();
