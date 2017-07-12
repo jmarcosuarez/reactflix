@@ -67,6 +67,7 @@ module.exports = {
       template: './src/index.ejs',  // Load custom template
     }),
     new webpack.HotModuleReplacementPlugin(), // Enable HMR
+    new webpack.NamedModulesPlugin(),
   ],
   devServer: {
     contentBase: './dist',
