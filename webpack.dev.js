@@ -1,7 +1,6 @@
 // const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -31,22 +30,20 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 1,
-              },
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
             },
-            {
-              loader: 'postcss-loader',
-            },
-          ],
-          publicPath: './dist',
-        }),
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
+        publicPath: './dist',
       },
 
       // Loaders for other file types can go here
@@ -70,7 +67,6 @@ module.exports = {
       filename: 'index.html', // Name of file created
       template: './src/index.ejs',  // Load custom template
     }),
-    new ExtractTextPlugin('app.css'),
   ],
   devServer: {
     contentBase: './dist',
