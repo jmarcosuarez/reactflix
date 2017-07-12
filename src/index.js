@@ -28,7 +28,6 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Stream} />
-        <Route path="/" component={Stream} />
       </Route>
     </Router>
   </Provider>,

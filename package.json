@@ -7,7 +7,8 @@
     "> 10%"
   ],
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
+    "dev": "webpack-dev-server --env=dev --progress --colors --hot",
+    "prod": "webpack --env=prod --progress --profile --colors",
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'src/**/*spec.js'",
     "test:watch": "npm run test -- --watch"
   },
@@ -37,6 +38,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.29.0",
     "jsdom": "^9.11.0",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
