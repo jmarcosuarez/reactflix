@@ -43,7 +43,6 @@ module.exports = {
             loader: 'postcss-loader',
           },
         ],
-        publicPath: './dist',
       },
 
       // Loaders for other file types can go here
