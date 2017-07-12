@@ -1,4 +1,4 @@
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -66,10 +66,11 @@ module.exports = {
       filename: 'index.html', // Name of file created
       template: './src/index.ejs',  // Load custom template
     }),
+    new webpack.HotModuleReplacementPlugin(), // Enable HMR
   ],
   devServer: {
     contentBase: './dist',
-    hot: true,
+    hot: true, // Tell the dev-server we're using HMR
     historyApiFallback: true,
   },
 };

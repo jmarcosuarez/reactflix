@@ -11,7 +11,7 @@ import Stream from './components/Stream';
 
 const tracks = [
   {
-    title: 'Some track',
+    title: 'Some2 track',
   },
   {
     title: 'Some other track',
