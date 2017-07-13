@@ -1,12 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const bootstrapEntryPoints = require('./webpack.bootstrap.config.js');
 
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     './src/index.js',
+    bootstrapEntryPoints.dev,
   ],
   module: {
     rules: [
@@ -52,6 +54,8 @@ module.exports = {
           'image-webpack-loader',
         ],
       },
+      { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
+      { test: /\.(ttf|eot)$/, loader: 'file-loader' },
     ],
   },
   resolve: {

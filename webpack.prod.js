@@ -1,14 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const bootstrapEntryPoints = require('./webpack.bootstrap.config.js');
 
 module.exports = {
-  entry: [
-    './src/index.js',
-  ],
+  entry: {
+    app: './src/index.js',
+    bootstrap: bootstrapEntryPoints.prod,
+  },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -49,6 +51,8 @@ module.exports = {
           'image-webpack-loader',
         ],
       },
+      { test: /\.(woff2?|svg)$/, loader: 'url-loader?name=fonts/[name].[ext]' },
+      { test: /\.(ttf|eot)$/, loader: 'file-loader?name=fonts/[name].[ext]' },
     ],
   },
   resolve: {
@@ -64,6 +68,9 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.ejs',
     }),
-    new ExtractTextPlugin('app.css'),
+    new ExtractTextPlugin({
+      filename: '/css/[name].css',
+      allChunks: true,
+    }),
   ],
 };
