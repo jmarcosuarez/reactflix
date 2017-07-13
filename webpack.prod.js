@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const bootstrapEntryPoints = require('./webpack.bootstrap.config.js');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 module.exports = {
   entry: {
@@ -31,6 +33,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
+                localIdentName: 'purify_[hash:base64:5]',
                 modules: true,
                 importLoaders: 1,
                 minimize: true,
@@ -71,6 +74,15 @@ module.exports = {
     new ExtractTextPlugin({
       filename: '/css/[name].css',
       allChunks: true,
+    }),
+    new PurifyCSSPlugin({
+      styleExtensions: ['.css', '.scss', '.sass', '.less'],
+      moduleExtensions: ['.html', '.js'],
+      paths: glob.sync(path.join(__dirname, '/src/{*.ejs,components/**/*.js,components/**/**/*.js}')),
+      purifyOptions: {
+        whitelist: ['*purify*'],
+      },
+      minimize: true,
     }),
   ],
 };
