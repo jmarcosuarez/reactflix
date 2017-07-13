@@ -41,6 +41,14 @@ module.exports = {
           publicPath: './dist',
         }),
       },
+      // Loaders for other file types can go here
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          'file-loader?name=images/[name].[ext]',
+          'image-webpack-loader',
+        ],
+      },
     ],
   },
   resolve: {
