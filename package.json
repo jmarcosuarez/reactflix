@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server --env=dev --progress --colors --inline",
-    "prod": "npm run clean && webpack -p --env=prod --progress --profile --colors",
+    "build": "npm run clean && webpack -p --env=prod --progress --profile --colors",
+    "prod": "node server.prod.js",
     "clean": "rimraf ./dist/*",
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'src/**/*spec.js'",
     "test:watch": "npm run test -- --watch"
