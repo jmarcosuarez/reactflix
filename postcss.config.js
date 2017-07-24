@@ -1,5 +1,5 @@
 /**
-  * Tells posstcss which plugins to use
+  * Tells postCSS which plugins to use
   **/
 module.exports = {
   plugins: [
