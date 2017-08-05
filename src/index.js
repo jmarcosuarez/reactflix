@@ -8,6 +8,7 @@ import configureStore from './stores/configureStore';
 import * as actions from './actions';
 import App from './components/App';
 import Stream from './components/Stream';
+import DevTools from './DevTools';
 
 const tracks = [
   {
@@ -36,4 +37,18 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app'),
 );
+
+if (__DEVTOOLS__ && !global.devToolsExtension) {
+  ReactDOM.render(
+    <Provider store={store}>
+      <div>
+        <Router history={history}>
+          {routes}
+        </Router>
+        <DevTools />
+      </div>
+    </Provider>,
+    document.getElementById('app'),
+  );
+}
 
