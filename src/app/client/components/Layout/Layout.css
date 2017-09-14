@@ -1,3 +1,18 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 60px auto 180px;
+}
+
 .layout {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 1em;
+}
+
+@media (min-width: 700px) {
+  .container {
+    grid-template-rows: 60px auto 120px;
+  }
 }

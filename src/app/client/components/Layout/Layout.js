@@ -12,7 +12,7 @@ class Layout extends Component {
 
   render() {
     return (
-      <section>
+      <section className={styles.container}>
         <Header />
         <div className={styles.layout}>
           {this.props.children}
