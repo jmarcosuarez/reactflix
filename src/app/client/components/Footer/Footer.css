@@ -1,12 +1,13 @@
-.footer {
-  background-color: #1D32A4;
-  & > div {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 40px 0;
+@import "../../../static/stylesheets/abstracts/all.css";
 
+.footer {
+  background-color: var(--color2);
+  & > div {
+    /*max-width: 600px;*/
+    padding: 1em;
+    
     & p {
-      text-align: center;
+      /*text-align: center;*/
       font-size: 12px;
       color: #D9D9D9;
     }
