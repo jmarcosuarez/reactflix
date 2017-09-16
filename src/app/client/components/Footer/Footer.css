@@ -1,9 +1,7 @@
 @import "../../../static/stylesheets/abstracts/all.css";
 
 .footer {
-  grid-column-start: main-start;
-  grid-column-end: main-end;
-  grid-row-start: content-end;
+  grid-area: footer;
 
   background-color: var(--color2);
   & > div {

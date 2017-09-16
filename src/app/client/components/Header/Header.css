@@ -1,9 +1,7 @@
 @import "../../../static/stylesheets/abstracts/all.css";
 
 .header {
-  grid-column-start: main-start;
-  grid-column-end: main-end;
-  grid-row-start: main-start;
+  grid-area: header;
 
   border-bottom: 1px solid var(--color2);
   background-color: color(var(--color2) a(5%)); /* As rgba(255, 0, 0, .05)*/
