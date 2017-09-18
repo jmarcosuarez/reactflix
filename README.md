@@ -1,16 +1,11 @@
 # minimal-react-boilerplate
-Minimal react boilerplate - babel/webpack2
+Minimal react boilerplate - babel/webpack2, postCSS/css-modules, Jest/Enzyme
 ## Installation
-TODO: Describe the installation process
+`npm install` to install dependencies
 ## Usage 
-
-Execute `npm install` to install dependencies
-
-Then
-
-Execute `npm run dev` to run the development server on **http://localhost:8080
+`npm run dev` to run the development server on **http://localhost:8080
 or
-Execute `npm run prod` to run the production server. To test it works see **http://localhost:4000
+`npm run prod` to run the production server. To test it works see **http://localhost:4000
 
 ## Contributing
 1. Fork it!
