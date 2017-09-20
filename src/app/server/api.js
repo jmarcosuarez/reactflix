@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/api', (req, res) => {
-  res.sendFile(path.normalize(path.join(__dirname, '/../../data/transactions.json')));
+  res.sendFile(path.normalize(path.join(__dirname, '/../../data/movies.json')));
 });
 
 app.listen(PORT, IP, (err) => {

@@ -8,6 +8,7 @@ const App = props =>
     {
       props.children
     }
+    <p>Inspired by @makv25s <a href="https://dribbble.com/shots/3720358-Daily-Ui-025-TV-app">daily dribble</a></p>
   </div>;
 
 App.propTypes = {

@@ -2,6 +2,23 @@
   --spacer: 1rem;
 }
 
+html, body {
+  height: 100%;
+  padding-top: 4%;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr) 
+    [main-start] minmax(0, 100em) [main-end]
+    minmax(1em, 1fr) [full-end];
+  
+  background: linear-gradient(to bottom right,#7f3737,#2a2122);
+}
+
+* {
+  grid-column: main;
+}
+
+
 ul {
   list-style: none;
   padding: 0;

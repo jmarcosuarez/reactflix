@@ -2,8 +2,7 @@
 
 .footer {
   grid-area: footer;
-
-  background-color: var(--color2);
+  background: linear-gradient(to bottom right, #7d1e24, #bb2d35);
   & > div {
     /*max-width: 600px;*/
     padding: 1em;
