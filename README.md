@@ -1,10 +1,12 @@
-# minimal-react-boilerplate
-Minimal react boilerplate - babel/webpack2, postCSS/css-modules, Jest/Enzyme
+# reactflix
+A movie management app with react/redux - babel/webpack2, postCSS/css-modules, Jest/Enzyme
 ## Installation
 `npm install` to install dependencies
 ## Usage 
 `npm run dev` to run the development server on **http://localhost:8080
+
 or
+
 `npm run prod` to run the production server. To test it works see **http://localhost:4000
 
 ## Contributing
