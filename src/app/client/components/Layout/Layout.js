@@ -8,6 +8,7 @@ class Layout extends Component {
 
   componentDidMount() {
     document.title = this.props.title;
+    this.props.onFetchmovies();
   }
 
   render() {
@@ -29,6 +30,7 @@ Layout.propTypes = {
     PropTypes.object,
   ]).isRequired,
   title: PropTypes.string,
+  onFetchmovies: PropTypes.func.isRequired,
 };
 
 Layout.defaultProps = {

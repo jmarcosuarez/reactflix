@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import bank from './bank';
+import movie from './movie';
 
 export default combineReducers({
-  bank,
+  movie,
   routing: routerReducer,
 });

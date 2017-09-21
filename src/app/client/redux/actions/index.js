@@ -1,7 +1,5 @@
-import { setChoosenBank, setTransactions, fetchTransactions } from './bank';
+import { fetchMovies } from './movie';
 
 export {
-  setChoosenBank,
-  setTransactions,
-  fetchTransactions,
+  fetchMovies,
 };
