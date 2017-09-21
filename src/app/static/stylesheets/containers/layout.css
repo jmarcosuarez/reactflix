@@ -1,17 +1,3 @@
-.wrapper {
-  display: grid;
-  grid-template-columns: 
-    [main-start] minmax(1em, 1fr) 
-    [content-start] minmax(0, 40em) [content-end]
-    minmax(1em, 1fr) [main-end];
-}
-
-.main {
-  /* Now content extends just the middle column */
-  grid-area: content;
-}
-
-.mainSplash {
-  /* Now content goes through all 3 columns */
-  grid-area: main;
+.container {
+  
 }
