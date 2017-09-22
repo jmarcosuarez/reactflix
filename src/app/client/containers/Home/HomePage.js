@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../../redux/actions';
+// import { bindActionCreators } from 'redux';
+// import * as actions from '../../redux/actions';
 import * as moviesSelectors from '../../redux/reducers/movie';
 
-import { Layout } from '../../components';
 import styles from './Home.css';
 
-const HomePage = props =>
-  <Layout onFetchmovies={props.onFetchmovies} title="Welcome!">
+const HomePage = () =>
+  <section title="Welcome!">
     <div className={styles.wrapper}>
       <div className={styles.main}>
 
@@ -19,14 +18,14 @@ const HomePage = props =>
       </div>
     </div>
 
-  </Layout>;
+  </section>;
 
 HomePage.propTypes = {
-  onFetchmovies: PropTypes.func,
+  // onFetchmovies: PropTypes.func,
 };
 
 HomePage.defaultProps = {
-  onFetchmovies: () => {},
+  // onFetchmovies: () => {},
 };
 
 function mapStateToProps(state) {
@@ -37,10 +36,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onFetchmovies: bindActionCreators(actions.fetchMovies, dispatch),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps)(HomePage);

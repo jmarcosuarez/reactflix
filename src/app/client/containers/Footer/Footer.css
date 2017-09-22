@@ -1,7 +1,7 @@
 @import "../../../static/stylesheets/abstracts/all.css";
 
 .footer {
-  grid-area: footer;
+  height: 150px;
   background: linear-gradient(to bottom right, #7d1e24, #bb2d35);
   & > div {
     /*max-width: 600px;*/
