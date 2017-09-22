@@ -1,3 +1,4 @@
+import { keys } from 'ramda';
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
@@ -17,7 +18,7 @@ export default function movie(state = initialState.movie, action) {
 
 /*  Selectors */
 export function getMovies(state) {
-  const moviesById = state.movie;
-  const moviesIdArray = Object.keys(moviesById);
+  const moviesById = state.movie.movies;
+  const moviesIdArray = keys(moviesById);
   return [moviesById, moviesIdArray];
 }

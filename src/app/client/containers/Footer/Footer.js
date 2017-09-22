@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../redux/actions';
 import * as moviesSelectors from '../../redux/reducers/movie';
 
+import { ListView, ListRow } from '../../components';
 import styles from './Footer.css';
 
 class Footer extends Component {
@@ -13,10 +14,27 @@ class Footer extends Component {
     this.props.onFetchmovies();
   }
 
+  renderRow(movieId, movie) {
+    return (
+      <ListRow
+        rowId={movie.id}
+        // onClick={this.onRowClick}
+      >
+        <h3>{movie.title}</h3>
+        <p>{movie.subtitle}</p>
+      </ListRow>
+    );
+  }
+
   render() {
     return (
       <footer className={styles.footer}>
         <div>
+          <ListView
+            rowsIdArray={this.props.moviesIdArray}
+            rowsById={this.props.moviesById}
+            renderRow={this.renderRow}
+          />
           <p>
             &copy; ThisCompany Limited 2017 All rights reserved.
             Except as permitted by the copyright law applicable to you,
@@ -31,10 +49,13 @@ class Footer extends Component {
 
 Footer.propTypes = {
   onFetchmovies: PropTypes.func,
+  moviesIdArray: PropTypes.array.isRequired,
+  moviesById: PropTypes.array,
 };
 
 Footer.defaultProps = {
   onFetchmovies: () => {},
+  moviesById: [],
 };
 
 function mapStateToProps(state) {
