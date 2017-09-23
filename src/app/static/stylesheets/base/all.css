@@ -4,7 +4,7 @@
 
 html, body {
   height: 100%;
-  padding-top: 4%;
+  /*padding-top: 4%;*/
   display: grid;
   grid-template-columns:
     [full-start] minmax(1em, 1fr) 
@@ -12,10 +12,12 @@ html, body {
     minmax(1em, 1fr) [full-end];
   
   background: linear-gradient(to bottom right,#7f3737,#2a2122);
+  
 }
 
 * {
   grid-column: main;
+  margin: auto 0; /* This trick centers vertically */
 }
 
 
